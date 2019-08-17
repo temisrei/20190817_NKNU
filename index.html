@@ -16,21 +16,43 @@
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <h1 class="display-4">鳶尾花預測</h1>
+      <p class="lead" id="answer">請輸入相關參數</p>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        One of three columns
+        <div class="form-group">
+          <label for="sepalLength">花萼長度</label>
+          <input type="number" step="0.1" class="form-control" id="sepalLength" placeholder="請輸入花萼長度">
+        </div>
       </div>
       <div class="col-sm">
-        One of three columns
+        <div class="form-group">
+          <label for="sepalWidth">花萼寬度</label>
+          <input type="number" step="0.1" class="form-control" id="sepalWidth" placeholder="請輸入花萼寬度">
+        </div>
       </div>
       <div class="col-sm">
-        One of three columns
+        <div class="form-group">
+          <label for="petalLength">花瓣長度</label>
+          <input type="number" step="0.1" class="form-control" id="petalLength" placeholder="請輸入花瓣長度">
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="petalWidth">花瓣寬度</label>
+          <input type="number" step="0.1" class="form-control" id="petalWidth" placeholder="請輸入花瓣寬度">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <button type="button" id="btnPredict" class="btn btn-block btn-primary">進行預測</button>
+        <button type="button" id="btnLIFF" class="btn btn-block btn-success">送到群組</button>
       </div>
     </div>
   </div>
