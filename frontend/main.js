@@ -25,7 +25,7 @@ $(function () {
   btnPredict.click(function () {
     getIrisData();
     $.ajax({
-      url: "http://127.0.0.1:5000/api?iris=" + iris,
+      url: "https://e7c80c04.ngrok.io/api?iris=" + iris,
       success: function (response) {
         console.log(response);
         answer.html(response.result);
