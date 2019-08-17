@@ -9,7 +9,7 @@ app = Flask(__name__)
 # 測試資料
 # iris = [5.1, 3.5, 1.4, 0.2] # Iris Setosa
 # iris = [7.0, 3.2, 4.7, 1.4] # Iris Versicolour
-iris = [6.4, 2.8, 5.6, 2.1] # Iris Virginica
+# iris = [6.4, 2.8, 5.6, 2.1] # Iris Virginica
 
 # 把模型讀進來
 classifier = joblib.load('classifier.joblib')
@@ -20,10 +20,11 @@ def main():
 
 @app.route('/api', methods=['GET'])
 def api():
-  # formData = request.json # 接資料
-  formData = jsonify(iris).json
-  # data = [val for val in formData.values()]
-  data = formData
+  # ?iris=5.1,3.5,1.4,0.2 # Iris Setosa
+  # ?iris=7.0,3.2,4.7,1.4 # Iris Versicolour
+  # ?iris=6.4,2.8,5.6,2.1 # Iris Virginica
+  irisData = request.args.get('iris')
+  data = irisData.split(',')
 
   # 預測資料
   prediction = classifier.predict(np.array(data).reshape(1, -1))
