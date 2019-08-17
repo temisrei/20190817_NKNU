@@ -8,6 +8,10 @@ $(function () {
   var btnLIFF = $('#btnLIFF');
   var answer = $('#answer');
 
+  liff.init(function (data) {
+    console.log(data.context.userId);    //直接取得 userId
+  });
+
   var getIrisData = function () {
     iris = sepalLength.val() + ',' + sepalWidth.val() + ',' + petalLength.val() + ',' + petalWidth.val();
     console.log(iris);
