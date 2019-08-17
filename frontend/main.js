@@ -21,7 +21,7 @@ $(function () {
   btnPredict.click(function () {
     getIrisData();
     $.ajax({
-      url: "https://fathomless-savannah-41096.herokuapp.com/api?iris=" + iris,
+      url: "http://127.0.0.1:5000/api?iris=" + iris,
       success: function (response) {
         console.log(response);
         answer.html(response.result);
