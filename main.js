@@ -9,7 +9,8 @@ $(function () {
   var answer = $('#answer');
 
   liff.init(function (data) {
-    console.log(data.context.userId);    //直接取得 userId
+    console.log(data.context.userId);
+    answer.html(answer.html() + '<br>' + data.context.userId);
   });
 
   var getIrisData = function () {
