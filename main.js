@@ -32,4 +32,15 @@ $(function () {
       }
     });
   });
+
+  btnLIFF.click(function () {
+    console.log(answer.html());
+    liff.sendMessages([
+      {
+        type: 'text',
+        text: answer.html(),
+      }
+    ]);
+    liff.closeWindow();
+  });
 });
